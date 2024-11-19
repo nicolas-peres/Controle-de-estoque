@@ -88,7 +88,6 @@ namespace MapaSala.Formularios
             this.btncadastro.TabIndex = 6;
             this.btncadastro.Text = "Cadastrar";
             this.btncadastro.UseVisualStyleBackColor = true;
-            this.btncadastro.Click += new System.EventHandler(this.btncadastro_Click_1);
             // 
             // frmCadastrarUsuario
             // 
