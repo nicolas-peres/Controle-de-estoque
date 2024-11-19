@@ -25,6 +25,16 @@ namespace Controle_de_estoque
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             FrmCadastrarProduto s = new FrmCadastrarProduto();
             s.ShowDialog();
         }

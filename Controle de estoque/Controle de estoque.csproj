@@ -133,6 +133,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Cadastrar\FrmCadastrarProduto.resx">
+      <DependentUpon>FrmCadastrarProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cadastrar\FrmCadastrarUsuario.resx">
       <DependentUpon>FrmCadastrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
