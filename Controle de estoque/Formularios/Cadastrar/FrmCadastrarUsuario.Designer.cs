@@ -40,7 +40,7 @@ namespace MapaSala.Formularios
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 60);
+            this.label1.Location = new System.Drawing.Point(69, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace MapaSala.Formularios
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 144);
+            this.label2.Location = new System.Drawing.Point(69, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
@@ -57,15 +57,14 @@ namespace MapaSala.Formularios
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(50, 93);
+            this.txtUsuario.Location = new System.Drawing.Point(72, 83);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 3;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(50, 174);
+            this.txtSenha.Location = new System.Drawing.Point(72, 164);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 4;
@@ -73,7 +72,7 @@ namespace MapaSala.Formularios
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(50, 233);
+            this.chkAtivo.Location = new System.Drawing.Point(72, 223);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(50, 17);
             this.chkAtivo.TabIndex = 5;
@@ -82,19 +81,18 @@ namespace MapaSala.Formularios
             // 
             // btncadastro
             // 
-            this.btncadastro.Location = new System.Drawing.Point(39, 285);
+            this.btncadastro.Location = new System.Drawing.Point(61, 275);
             this.btncadastro.Name = "btncadastro";
             this.btncadastro.Size = new System.Drawing.Size(130, 23);
             this.btncadastro.TabIndex = 6;
             this.btncadastro.Text = "Cadastrar";
             this.btncadastro.UseVisualStyleBackColor = true;
-            this.btncadastro.Click += new System.EventHandler(this.btncadastro_Click_1);
             // 
             // frmCadastrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 479);
+            this.ClientSize = new System.Drawing.Size(255, 349);
             this.Controls.Add(this.btncadastro);
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtSenha);
