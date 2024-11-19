@@ -1,4 +1,4 @@
-﻿using MapaSala.Classes;
+﻿using Controle_de_estoque.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Model.Entidades;
 namespace MapaSala.Formularios
 {
     public partial class frmCadastrarUsuario : Form
@@ -20,7 +20,7 @@ namespace MapaSala.Formularios
 
         private void btncadastro_Click(object sender, EventArgs e)
         {
-            Usuarios u = new Usuarios();
+             u = new Usuarios();
             u.Login = txtUsuario.Text;
             u.Senha = txtSenha.Text;
             u.Ativo = chkAtivo.Checked;
@@ -36,6 +36,11 @@ namespace MapaSala.Formularios
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged_1(object sender, EventArgs e)
         {
 
         }

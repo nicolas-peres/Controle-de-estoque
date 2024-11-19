@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Model.Entitidades
 {
     public class UsuariosEntidade
