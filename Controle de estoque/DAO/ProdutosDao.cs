@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Model.Entidades;
 
 namespace Controle_de_estoque.DAO
 {
