@@ -28,11 +28,10 @@ namespace Controle_de_estoque
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-          
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new FrmCadastrarUsuario());
-            
+
+            FrmCadastrarUsuario u = new FrmCadastrarUsuario();
+            u.ShowDialog();
+
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -75,9 +74,23 @@ namespace Controle_de_estoque
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PrincipalFunci());
+            login.Usuario = txtLogin.Text;
+            login.Senha = txtSenha.Text;
+
+            if (login.Logar())
+            {
+                PrincipalFunci pf = new PrincipalFunci();
+                pf.FormClosed += FecharForm;
+                this.Hide();
+                txtLogin.Text = "";
+                txtSenha.Text = "";
+                txtLogin.Focus();
+                pf.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário e senha inválidos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
     }

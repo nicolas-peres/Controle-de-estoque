@@ -38,13 +38,15 @@ namespace Controle_de_estoque.Formularios.Cadastrar
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 46);
+            this.label1.Location = new System.Drawing.Point(7, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 0;
@@ -54,7 +56,7 @@ namespace Controle_de_estoque.Formularios.Cadastrar
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 137);
+            this.label2.Location = new System.Drawing.Point(7, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
@@ -63,7 +65,7 @@ namespace Controle_de_estoque.Formularios.Cadastrar
             // ChkAtivo
             // 
             this.ChkAtivo.AutoSize = true;
-            this.ChkAtivo.Location = new System.Drawing.Point(35, 223);
+            this.ChkAtivo.Location = new System.Drawing.Point(25, 230);
             this.ChkAtivo.Name = "ChkAtivo";
             this.ChkAtivo.Size = new System.Drawing.Size(50, 17);
             this.ChkAtivo.TabIndex = 2;
@@ -80,14 +82,14 @@ namespace Controle_de_estoque.Formularios.Cadastrar
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(20, 82);
+            this.txtLogin.Location = new System.Drawing.Point(12, 140);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
             this.txtLogin.TabIndex = 4;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(20, 172);
+            this.txtSenha.Location = new System.Drawing.Point(10, 193);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 5;
@@ -118,12 +120,31 @@ namespace Controle_de_estoque.Formularios.Cadastrar
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "Cadastrar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(12, 79);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Nome";
             // 
             // FrmCadastrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalvar);
@@ -152,5 +173,7 @@ namespace Controle_de_estoque.Formularios.Cadastrar
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label label3;
     }
 }

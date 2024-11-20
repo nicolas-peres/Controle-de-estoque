@@ -8,5 +8,6 @@ namespace Model.Entidades
 {
     class CompraEntidade
     {
+
     }
 }

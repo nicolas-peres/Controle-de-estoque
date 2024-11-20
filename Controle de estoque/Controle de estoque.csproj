@@ -102,6 +102,7 @@
     <Compile Include="Classes\Login.cs" />
     <Compile Include="Classes\Produto.cs" />
     <Compile Include="Classes\Usuario.cs" />
+    <Compile Include="DAO\ProdutosDao.cs" />
     <Compile Include="Formularios\Cadastrar\FrmCadastrarProduto.cs">
       <SubType>Form</SubType>
     </Compile>

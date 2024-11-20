@@ -29,28 +29,29 @@ namespace Controle_de_estoque
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.comboNome = new System.Windows.Forms.ComboBox();
             this.numQtd = new System.Windows.Forms.NumericUpDown();
             this.dtGridProduto = new System.Windows.Forms.DataGridView();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.comboNome = new System.Windows.Forms.ComboBox();
+            this.numId = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numQtd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numId)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 48);
+            this.label1.Location = new System.Drawing.Point(18, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +61,7 @@ namespace Controle_de_estoque
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 133);
+            this.label2.Location = new System.Drawing.Point(15, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
@@ -69,7 +70,7 @@ namespace Controle_de_estoque
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 271);
+            this.label3.Location = new System.Drawing.Point(11, 284);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;
@@ -78,7 +79,7 @@ namespace Controle_de_estoque
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 204);
+            this.label4.Location = new System.Drawing.Point(12, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 3;
@@ -86,7 +87,7 @@ namespace Controle_de_estoque
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(27, 160);
+            this.txtDescricao.Location = new System.Drawing.Point(21, 212);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(100, 20);
             this.txtDescricao.TabIndex = 5;
@@ -98,23 +99,9 @@ namespace Controle_de_estoque
             this.txtPreco.Size = new System.Drawing.Size(100, 20);
             this.txtPreco.TabIndex = 7;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // comboNome
-            // 
-            this.comboNome.FormattingEnabled = true;
-            this.comboNome.Location = new System.Drawing.Point(30, 84);
-            this.comboNome.Name = "comboNome";
-            this.comboNome.Size = new System.Drawing.Size(121, 21);
-            this.comboNome.TabIndex = 9;
-            this.comboNome.SelectedIndexChanged += new System.EventHandler(this.comboNome_SelectedIndexChanged);
-            // 
             // numQtd
             // 
-            this.numQtd.Location = new System.Drawing.Point(27, 239);
+            this.numQtd.Location = new System.Drawing.Point(18, 260);
             this.numQtd.Name = "numQtd";
             this.numQtd.Size = new System.Drawing.Size(120, 20);
             this.numQtd.TabIndex = 10;
@@ -136,6 +123,7 @@ namespace Controle_de_estoque
             this.btnSalvar.TabIndex = 12;
             this.btnSalvar.Text = "Cadastrar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnEditar
             // 
@@ -155,11 +143,38 @@ namespace Controle_de_estoque
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
+            // comboNome
+            // 
+            this.comboNome.FormattingEnabled = true;
+            this.comboNome.Location = new System.Drawing.Point(24, 161);
+            this.comboNome.Name = "comboNome";
+            this.comboNome.Size = new System.Drawing.Size(121, 21);
+            this.comboNome.TabIndex = 9;
+            this.comboNome.SelectedIndexChanged += new System.EventHandler(this.comboNome_SelectedIndexChanged);
+            // 
+            // numId
+            // 
+            this.numId.Location = new System.Drawing.Point(18, 112);
+            this.numId.Name = "numId";
+            this.numId.Size = new System.Drawing.Size(120, 20);
+            this.numId.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Id";
+            // 
             // FrmCadastrarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.numId);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalvar);
@@ -174,8 +189,10 @@ namespace Controle_de_estoque
             this.Controls.Add(this.label1);
             this.Name = "FrmCadastrarProduto";
             this.Text = "FrmCadastrarProduto";
+            this.Load += new System.EventHandler(this.FrmCadastrarProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numQtd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numId)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,12 +206,13 @@ namespace Controle_de_estoque
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ComboBox comboNome;
         private System.Windows.Forms.NumericUpDown numQtd;
         private System.Windows.Forms.DataGridView dtGridProduto;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.ComboBox comboNome;
+        private System.Windows.Forms.NumericUpDown numId;
+        private System.Windows.Forms.Label label5;
     }
 }
