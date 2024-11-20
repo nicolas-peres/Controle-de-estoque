@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Controle_de_estoque
+namespace Controle_de_estoque.Formularios
 {
-    public partial class Login : Form
+    public partial class Comprados : Form
     {
-        public Login()
+        public Comprados()
         {
             InitializeComponent();
+        }
+
+        private void dtGridComprados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

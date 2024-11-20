@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Controle_de_estoque;
+namespace Controle_de_estoque
 {
     public partial class FrmCadastrarProduto : Form
     {

@@ -101,6 +101,7 @@
     <Compile Include="Classes\Compra.cs" />
     <Compile Include="Classes\Login.cs" />
     <Compile Include="Classes\Produto.cs" />
+    <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Formularios\Cadastrar\FrmCadastrarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,23 +114,35 @@
     <Compile Include="Formularios\Cadastrar\FrmCadastrarUsuario.Designer.cs">
       <DependentUpon>FrmCadastrarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Comprados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Comprados.Designer.cs">
+      <DependentUpon>Comprados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Compras.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Compras.Designer.cs">
       <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalFunci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalFunci.Designer.cs">
+      <DependentUpon>PrincipalFunci.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,8 +152,17 @@
     <EmbeddedResource Include="Formularios\Cadastrar\FrmCadastrarUsuario.resx">
       <DependentUpon>FrmCadastrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Comprados.resx">
+      <DependentUpon>Comprados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalFunci.resx">
+      <DependentUpon>PrincipalFunci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

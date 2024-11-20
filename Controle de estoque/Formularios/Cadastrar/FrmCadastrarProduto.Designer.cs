@@ -39,7 +39,12 @@ namespace Controle_de_estoque
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.comboNome = new System.Windows.Forms.ComboBox();
             this.numQtd = new System.Windows.Forms.NumericUpDown();
+            this.dtGridProduto = new System.Windows.Forms.DataGridView();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numQtd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +69,7 @@ namespace Controle_de_estoque
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 289);
+            this.label3.Location = new System.Drawing.Point(24, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;
@@ -73,7 +78,7 @@ namespace Controle_de_estoque
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 222);
+            this.label4.Location = new System.Drawing.Point(24, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 3;
@@ -88,7 +93,7 @@ namespace Controle_de_estoque
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(27, 318);
+            this.txtPreco.Location = new System.Drawing.Point(24, 300);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(100, 20);
             this.txtPreco.TabIndex = 7;
@@ -109,17 +114,56 @@ namespace Controle_de_estoque
             // 
             // numQtd
             // 
-            this.numQtd.Location = new System.Drawing.Point(30, 257);
+            this.numQtd.Location = new System.Drawing.Point(27, 239);
             this.numQtd.Name = "numQtd";
             this.numQtd.Size = new System.Drawing.Size(120, 20);
             this.numQtd.TabIndex = 10;
             this.numQtd.ValueChanged += new System.EventHandler(this.numQtd_ValueChanged);
+            // 
+            // dtGridProduto
+            // 
+            this.dtGridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridProduto.Location = new System.Drawing.Point(211, 84);
+            this.dtGridProduto.Name = "dtGridProduto";
+            this.dtGridProduto.Size = new System.Drawing.Size(534, 286);
+            this.dtGridProduto.TabIndex = 11;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(14, 361);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 12;
+            this.btnSalvar.Text = "Cadastrar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(95, 361);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 13;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(52, 390);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 14;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // FrmCadastrarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.dtGridProduto);
             this.Controls.Add(this.numQtd);
             this.Controls.Add(this.comboNome);
             this.Controls.Add(this.txtPreco);
@@ -131,6 +175,7 @@ namespace Controle_de_estoque
             this.Name = "FrmCadastrarProduto";
             this.Text = "FrmCadastrarProduto";
             ((System.ComponentModel.ISupportInitialize)(this.numQtd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +192,9 @@ namespace Controle_de_estoque
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox comboNome;
         private System.Windows.Forms.NumericUpDown numQtd;
+        private System.Windows.Forms.DataGridView dtGridProduto;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }
