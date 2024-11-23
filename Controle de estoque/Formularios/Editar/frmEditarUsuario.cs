@@ -51,5 +51,10 @@ namespace Controle_de_estoque.Formularios.Editar
             usuarios.Excluir();
             this.Close();
         }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

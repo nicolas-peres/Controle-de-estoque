@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controle_de_estoque.DAO;
+using Controle_de_estoque.Classes;
 
 namespace Controle_de_estoque
 {
@@ -20,7 +21,7 @@ namespace Controle_de_estoque
         {
             InitializeComponent();
             dados = new DataTable();
-            foreach (var atributos in typeof(ProdutoEntidade).GetProperties())
+            foreach (var atributos in typeof(Produto).GetProperties())
             {
                 dados.Columns.Add(atributos.Name);
             }
@@ -47,17 +48,16 @@ namespace Controle_de_estoque
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            ProdutoEntidade p = new ProdutoEntidade();
-            p.Id = numId.Value;
-            p.Nome = comboNome.Text;
-            p.Descricao = txtDescricao;
-            p.Quantidade = numQtd.Value;
-            p.Preco = txtPreco.Text;
+            Produto produto = new Produto();
+            produto.Id = Convert.ToInt32(numId);
+            produto.Nome = comboNome.Text;
+            produto.Descricao = Convert.ToString(txtDescricao);
+            produto.Preco = txtPreco.Text;
 
             
 
-            ProdutosDao dao = new ProdutosDao();
-            dao.Inserir(p);
+            Produto dao = new Produto();
+            dao.Inserir(produto);
 
             dtGridProduto.DataSource = dao.ObterProdutos();
 
@@ -73,6 +73,11 @@ namespace Controle_de_estoque
         }
 
         private void FrmCadastrarProduto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtGridProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

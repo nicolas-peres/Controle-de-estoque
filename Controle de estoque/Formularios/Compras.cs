@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controle_de_estoque.Classes;
+using Controle_de_estoque.DAO;
 
 namespace Controle_de_estoque.Formularios
 {
@@ -20,9 +21,7 @@ namespace Controle_de_estoque.Formularios
         }
         private Dictionary<string, decimal> produtos = new Dictionary<string, decimal>
 {
-    { "Produto A", 10.50m },
-    { "Produto B", 20.00m },
-    { "Produto C", 15.75m }
+   
 };
 
         
@@ -68,7 +67,7 @@ namespace Controle_de_estoque.Formularios
             {
                 total += Convert.ToDecimal(row.Cells["Subtotal"].Value);
             }
-            lblTotal.Text = $"Total: {total:C}";
+            lblTotal.Text = $"Total: R$ {total:F2}";
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -96,6 +95,20 @@ namespace Controle_de_estoque.Formularios
             MessageBox.Show("Compra finalizada com sucesso!");
             dgvProdutos.Rows.Clear();
             AtualizarTotal();
+
+            
+                Compras c = new Compras();
+                
+                c.Apelido = txtApelido.Text;
+                c.Nome = txtNomeCompleto.Text;
+
+                CompradoDao dao = new CompradoDao();
+                dao.Inserir(c);
+
+                dgvProdutos.DataSource = dao.ObterProdutos();
+
+                LimparCampos();
+            
         }
 
 
@@ -123,5 +136,24 @@ namespace Controle_de_estoque.Formularios
             }
         }
 
+        private void comboBoxProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumQtd_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

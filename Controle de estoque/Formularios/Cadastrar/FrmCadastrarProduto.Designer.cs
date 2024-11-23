@@ -114,6 +114,7 @@ namespace Controle_de_estoque
             this.dtGridProduto.Name = "dtGridProduto";
             this.dtGridProduto.Size = new System.Drawing.Size(534, 286);
             this.dtGridProduto.TabIndex = 11;
+            this.dtGridProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridProduto_CellContentClick);
             // 
             // btnSalvar
             // 

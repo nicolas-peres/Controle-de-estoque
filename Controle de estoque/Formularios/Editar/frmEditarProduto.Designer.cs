@@ -79,6 +79,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(50, 20);
             this.txtId.TabIndex = 23;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // numQtd
             // 
@@ -94,6 +95,7 @@
             this.comboNome.Name = "comboNome";
             this.comboNome.Size = new System.Drawing.Size(121, 21);
             this.comboNome.TabIndex = 38;
+            this.comboNome.SelectedIndexChanged += new System.EventHandler(this.comboNome_SelectedIndexChanged);
             // 
             // txtpreco
             // 

@@ -32,16 +32,15 @@ namespace Controle_de_estoque.Formularios
             this.comboBoxProdutos = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.NumQtd = new System.Windows.Forms.NumericUpDown();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnFInalizar = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.colProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumQtd)).BeginInit();
@@ -57,6 +56,7 @@ namespace Controle_de_estoque.Formularios
             this.comboBoxProdutos.Name = "comboBoxProdutos";
             this.comboBoxProdutos.Size = new System.Drawing.Size(121, 21);
             this.comboBoxProdutos.TabIndex = 0;
+            this.comboBoxProdutos.SelectedIndexChanged += new System.EventHandler(this.comboBoxProdutos_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -75,15 +75,6 @@ namespace Controle_de_estoque.Formularios
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Quantidade";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "SubTotal";
             // 
             // NumQtd
             // 
@@ -106,10 +97,11 @@ namespace Controle_de_estoque.Formularios
             0,
             0,
             0});
+            this.NumQtd.ValueChanged += new System.EventHandler(this.NumQtd_ValueChanged);
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(12, 220);
+            this.btnAdicionar.Location = new System.Drawing.Point(12, 176);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 6;
@@ -119,7 +111,7 @@ namespace Controle_de_estoque.Formularios
             // 
             // btnFInalizar
             // 
-            this.btnFInalizar.Location = new System.Drawing.Point(12, 249);
+            this.btnFInalizar.Location = new System.Drawing.Point(12, 205);
             this.btnFInalizar.Name = "btnFInalizar";
             this.btnFInalizar.Size = new System.Drawing.Size(95, 23);
             this.btnFInalizar.TabIndex = 7;
@@ -140,13 +132,6 @@ namespace Controle_de_estoque.Formularios
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(444, 228);
             this.dgvProdutos.TabIndex = 8;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(238, 413);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(8, 20);
-            this.numericUpDown1.TabIndex = 9;
             // 
             // colProduto
             // 
@@ -172,18 +157,26 @@ namespace Controle_de_estoque.Formularios
             this.colSubtotal.Name = "colSubtotal";
             this.colSubtotal.ReadOnly = true;
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(238, 413);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(8, 20);
+            this.numericUpDown1.TabIndex = 9;
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(12, 320);
+            this.lblTotal.Location = new System.Drawing.Point(12, 288);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(75, 13);
             this.lblTotal.TabIndex = 10;
             this.lblTotal.Text = "Total: R$ 0,00";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(12, 278);
+            this.btnRemover.Location = new System.Drawing.Point(12, 234);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(107, 23);
             this.btnRemover.TabIndex = 11;
@@ -203,7 +196,6 @@ namespace Controle_de_estoque.Formularios
             this.Controls.Add(this.btnFInalizar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.NumQtd);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxProdutos);
@@ -222,7 +214,6 @@ namespace Controle_de_estoque.Formularios
         private System.Windows.Forms.ComboBox comboBoxProdutos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown NumQtd;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnFInalizar;

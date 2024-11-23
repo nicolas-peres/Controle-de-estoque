@@ -1,5 +1,4 @@
 ﻿using Controle_de_estoque.Classes;
-using MapaSala.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,13 +16,14 @@ namespace Controle_de_estoque.Formularios.Editar
         public frmEditarProduto(int Id)
         {
             InitializeComponent();
-            Usuarios usuarios = new Usuarios();
-            usuarios.PesquisarPorId(Id);
-            txtId.Text = usuarios.Id.ToString();
-            txtLogin.Text = usuarios.Login;
-            txtSenha.Text = usuarios.Senha;
-            chkAtivo.Checked = usuarios.Ativo;
-            usuarios = null;
+            Produto produto = new Produto();
+            produto.PesquisarPorId(Id);
+            txtId.Text = produto.Id.ToString();
+            comboNome.Text = produto.Nome;
+            txtDescricao.Text = produto.Descricao;
+            numQtd.Value = produto.Quantidade;
+            txtpreco.Text = produto.Preco;
+            produto = null;
         }
 
         private void frmEditarProduto_Load(object sender, EventArgs e)
@@ -39,6 +39,7 @@ namespace Controle_de_estoque.Formularios.Editar
             produto.Descricao = txtDescricao.Text;
             produto.Quantidade = Convert.ToInt32(numQtd.Value);
             produto.Preco = txtpreco.Text;
+
             produto.Editar();
             produto = null;
             this.Close();
@@ -53,6 +54,16 @@ namespace Controle_de_estoque.Formularios.Editar
         }
 
         private void txtPreco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboNome_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

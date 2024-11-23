@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Controle_de_estoque.Classes;
+using MapaSala.Classes;
 
 namespace Controle_de_estoque.DAO
 {
@@ -18,18 +19,7 @@ namespace Controle_de_estoque.DAO
             Conexao = new SqlConnection(LinhaConexao);
         }
 
-        public void Inserir (Produto produto)
-        {
-            Conexao.Open();
-            string query = "INSERT INTO Produtos (Nome, Descricao, Preco, Quantidade) VALUES (@nome, @descricao, @preco, @quantidade)";
-            SqlCommand comando = new SqlCommand(query, Conexao);
-            comando.Parameters.Add(new SqlParameter("@nome", produto.Nome));
-            comando.Parameters.Add(new SqlParameter("@descricao", produto.Descricao));
-            comando.Parameters.Add(new SqlParameter("@preco", produto.Preco));
-            comando.Parameters.Add(new SqlParameter("@estoque", produto.Quantidade));
-            comando.ExecuteNonQuery();
-            Conexao.Close();
-        }
+       
         public DataTable PreencherComboBox()
         {
             DataTable dataTable = new DataTable();
@@ -76,8 +66,7 @@ namespace Controle_de_estoque.DAO
                     p.Id = Convert.ToInt32(Leitura[0]);
                     p.Nome = Leitura[1].ToString();
                     p.Descricao = Leitura[2].ToString();
-                    p.Quantidade = Convert.ToInt32(Leitura[3]);
-                    p.Preco = Convert.ToInt32(Leitura[4]);
+                    p.Preco = Leitura[3].ToString();
                     dt.Rows.Add(p.Linha());
                 }
             }
@@ -114,8 +103,7 @@ namespace Controle_de_estoque.DAO
                     p.Id = Convert.ToInt32(Leitura[0]);
                     p.Nome = Leitura[1].ToString();
                     p.Descricao = Leitura[2].ToString();
-                    p.Quantidade = Convert.ToInt32(Leitura[3]);
-                    p.Preco = Convert.ToInt32(Leitura[4]);
+                    p.Preco = Leitura[3].ToString();
                     dt.Rows.Add(p.Linha());
                 }
             }

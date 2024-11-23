@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controle_de_estoque.Classes;
+using MapaSala.Classes;
 
 
 namespace Controle_de_estoque.Formularios.Cadastrar
@@ -17,15 +19,7 @@ namespace Controle_de_estoque.Formularios.Cadastrar
         public FrmCadastrarUsuario()
         {
             InitializeComponent();
-            dados = new DataTable();
-            foreach (var atributos in typeof(Usu).GetProperties())
-            {
-                dados.Columns.Add(atributos.Name);
-            }
-
-            dados = dao.ObterProfessores();
-
-            dtGridProfessores.DataSource = dados;
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,6 +33,22 @@ namespace Controle_de_estoque.Formularios.Cadastrar
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Usuarios u = new Usuarios();
+            u.Login = txtLogin.Text;
+            u.Senha = txtSenha.Text;
+            u.Ativo = ChkAtivo.Checked;
+            u.Inserir();
+            MessageBox.Show("Sucesso", "Cadastrado com sucesso");
+            Close();
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
         {
 
         }
