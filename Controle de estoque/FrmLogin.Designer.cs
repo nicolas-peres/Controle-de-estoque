@@ -125,7 +125,9 @@ namespace Controle_de_estoque
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEntrar);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

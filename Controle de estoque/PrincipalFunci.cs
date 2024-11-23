@@ -21,8 +21,8 @@ namespace Controle_de_estoque
 
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Compras c = new Compras();
-            c.ShowDialog();
+            Comprados co = new Comprados();
+            co.ShowDialog();
         }
 
         private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)

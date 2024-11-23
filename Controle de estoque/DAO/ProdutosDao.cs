@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model.Entidades;
+using Controle_de_estoque.Classes;
 
 namespace Controle_de_estoque.DAO
 {
@@ -18,25 +18,17 @@ namespace Controle_de_estoque.DAO
             Conexao = new SqlConnection(LinhaConexao);
         }
 
-        public void Inserir(ProdutoEntidade produto)
+        public void Inserir (Produto produto)
         {
             Conexao.Open();
-            string query = "Insert into Produtos (Nome , Descricao, Quantidade,Preco) Values (@nome, @descricao, @quantidade,@preco) ";
+            string query = "INSERT INTO Produtos (Nome, Descricao, Preco, Quantidade) VALUES (@nome, @descricao, @preco, @quantidade)";
             SqlCommand comando = new SqlCommand(query, Conexao);
-
-            SqlParameter parametro1 = new SqlParameter("@nome", produto.Nome);
-            SqlParameter parametro2 = new SqlParameter("@descricao", produto.Descricao);
-            SqlParameter parametro3 = new SqlParameter("@quantidade", produto.Quantidade);
-            SqlParameter parametro4 = new SqlParameter("@preco", produto.Preco);
-            comando.Parameters.Add(parametro1);
-            comando.Parameters.Add(parametro2);
-            comando.Parameters.Add(parametro3);
-            comando.Parameters.Add(parametro4);
-
-
+            comando.Parameters.Add(new SqlParameter("@nome", produto.Nome));
+            comando.Parameters.Add(new SqlParameter("@descricao", produto.Descricao));
+            comando.Parameters.Add(new SqlParameter("@preco", produto.Preco));
+            comando.Parameters.Add(new SqlParameter("@estoque", produto.Quantidade));
             comando.ExecuteNonQuery();
             Conexao.Close();
-
         }
         public DataTable PreencherComboBox()
         {
@@ -71,7 +63,7 @@ namespace Controle_de_estoque.DAO
 
             SqlDataReader Leitura = comando.ExecuteReader();
 
-            foreach (var atributos in typeof(ProdutoEntidade).GetProperties())
+            foreach (var atributos in typeof(Produto).GetProperties())
             {
                 dt.Columns.Add(atributos.Name);
             }
@@ -80,7 +72,7 @@ namespace Controle_de_estoque.DAO
             {
                 while (Leitura.Read())
                 {
-                    ProdutoEntidade p = new ProdutoEntidade();
+                    Produto p = new Produto();
                     p.Id = Convert.ToInt32(Leitura[0]);
                     p.Nome = Leitura[1].ToString();
                     p.Descricao = Leitura[2].ToString();
@@ -109,7 +101,7 @@ namespace Controle_de_estoque.DAO
 
             SqlDataReader Leitura = comando.ExecuteReader();
 
-            foreach (var atributos in typeof(ProdutoEntidade).GetProperties())
+            foreach (var atributos in typeof(Produto).GetProperties())
             {
                 dt.Columns.Add(atributos.Name);
             }
@@ -118,7 +110,7 @@ namespace Controle_de_estoque.DAO
             {
                 while (Leitura.Read())
                 {
-                    ProdutoEntidade p = new ProdutoEntidade();
+                    Produto p = new Produto();
                     p.Id = Convert.ToInt32(Leitura[0]);
                     p.Nome = Leitura[1].ToString();
                     p.Descricao = Leitura[2].ToString();

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Model.Entitidades
+namespace Model.Entidades
 {
     public class UsuariosEntidade
     {
